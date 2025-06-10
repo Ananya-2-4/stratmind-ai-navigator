@@ -3,6 +3,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Check } from "lucide-react";
 import { useState } from "react";
+import { Link } from "react-router-dom";
 
 const PricingSection = () => {
   const [isYearly, setIsYearly] = useState(false);
@@ -19,6 +20,7 @@ const PricingSection = () => {
         "7-day free trial"
       ],
       cta: "Start Free Trial",
+      ctaLink: "/try-free",
       popular: false,
       color: "border-gray-200"
     },
@@ -35,6 +37,7 @@ const PricingSection = () => {
         "Custom report templates"
       ],
       cta: "Get Started",
+      ctaLink: "/try-free",
       popular: true,
       color: "border-brand-teal ring-2 ring-brand-teal/20"
     },
@@ -52,6 +55,7 @@ const PricingSection = () => {
         "Advanced analytics dashboard"
       ],
       cta: "Contact Sales",
+      ctaLink: "/try-free",
       popular: false,
       color: "border-gray-200"
     }
@@ -139,16 +143,18 @@ const PricingSection = () => {
                 </ul>
 
                 {/* CTA Button */}
-                <Button 
-                  className={`w-full py-3 rounded-xl transition-all duration-300 ${
-                    plan.popular 
-                      ? 'bg-brand-teal hover:bg-brand-teal/90 text-white glow-effect' 
-                      : 'bg-white border-2 border-brand-blue text-brand-blue hover:bg-brand-blue hover:text-white'
-                  }`}
-                  size="lg"
-                >
-                  {plan.cta}
-                </Button>
+                <Link to={plan.ctaLink}>
+                  <Button 
+                    className={`w-full py-3 rounded-xl transition-all duration-300 ${
+                      plan.popular 
+                        ? 'bg-brand-teal hover:bg-brand-teal/90 text-white glow-effect' 
+                        : 'bg-white border-2 border-brand-blue text-brand-blue hover:bg-brand-blue hover:text-white'
+                    }`}
+                    size="lg"
+                  >
+                    {plan.cta}
+                  </Button>
+                </Link>
               </CardContent>
             </Card>
           ))}

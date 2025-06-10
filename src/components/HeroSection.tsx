@@ -1,6 +1,7 @@
 
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Play } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const HeroSection = () => {
   return (
@@ -33,14 +34,18 @@ const HeroSection = () => {
 
           {/* CTA Buttons */}
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center animate-slide-up" style={{animationDelay: '0.6s'}}>
-            <Button size="lg" className="bg-brand-teal hover:bg-brand-teal/90 text-white px-8 py-4 text-lg rounded-xl glow-effect transition-all duration-300 hover:scale-105">
-              Try Free Demo
-              <ArrowRight className="ml-2 h-5 w-5" />
-            </Button>
-            <Button size="lg" variant="outline" className="border-white/30 text-white hover:bg-white/10 px-8 py-4 text-lg rounded-xl transition-all duration-300 hover:scale-105">
-              <Play className="mr-2 h-5 w-5" />
-              See It In Action
-            </Button>
+            <Link to="/try-free">
+              <Button size="lg" className="bg-brand-teal hover:bg-brand-teal/90 text-white px-8 py-4 text-lg rounded-xl glow-effect transition-all duration-300 hover:scale-105">
+                Try Free Demo
+                <ArrowRight className="ml-2 h-5 w-5" />
+              </Button>
+            </Link>
+            <Link to="/demo">
+              <Button size="lg" variant="outline" className="border-white/30 text-white hover:bg-white/10 px-8 py-4 text-lg rounded-xl transition-all duration-300 hover:scale-105">
+                <Play className="mr-2 h-5 w-5" />
+                See It In Action
+              </Button>
+            </Link>
           </div>
 
           {/* Trust Indicators */}
