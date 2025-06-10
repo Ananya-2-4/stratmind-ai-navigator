@@ -1,5 +1,5 @@
-
 import { useState } from "react";
+import Navigation from "@/components/Navigation";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Textarea } from "@/components/ui/textarea";
@@ -13,7 +13,10 @@ import {
   Calendar,
   Download,
   Sparkles,
-  ArrowRight
+  ArrowRight,
+  Brain,
+  FileText,
+  Users
 } from "lucide-react";
 
 const Dashboard = () => {
@@ -70,7 +73,8 @@ const Dashboard = () => {
 
   return (
     <div className="min-h-screen bg-gray-50">
-      <div className="container mx-auto px-6 py-8">
+      <Navigation />
+      <div className="pt-24 pb-16">
         {/* Header */}
         <div className="mb-8">
           <h1 className="text-3xl font-bold text-brand-navy mb-2">Strategic Decision Assistant</h1>
