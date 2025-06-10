@@ -1,6 +1,7 @@
 
 import { Button } from "@/components/ui/button";
 import { Play } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const DemoSection = () => {
   return (
@@ -32,13 +33,15 @@ const DemoSection = () => {
               </div>
             </div>
 
-            <Button 
-              size="lg" 
-              className="bg-brand-teal hover:bg-brand-teal/90 text-white px-8 py-4 text-lg rounded-xl glow-effect transition-all duration-300 hover:scale-105"
-            >
-              <Play className="mr-2 h-5 w-5" />
-              Watch Live Demo
-            </Button>
+            <Link to="/dashboard">
+              <Button 
+                size="lg" 
+                className="bg-brand-teal hover:bg-brand-teal/90 text-white px-8 py-4 text-lg rounded-xl glow-effect transition-all duration-300 hover:scale-105"
+              >
+                <Play className="mr-2 h-5 w-5" />
+                Try Live Demo
+              </Button>
+            </Link>
           </div>
 
           {/* Demo Mockup */}
